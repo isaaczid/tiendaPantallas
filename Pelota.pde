@@ -1,3 +1,7 @@
+/***
+*Clase que sirve unicamente para tener un objeto animado en el fondo
+*/
+
 class Pelota{
   //Atributos
   private int posX,posY,diametro,radio;

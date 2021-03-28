@@ -1,3 +1,6 @@
+/***
+*Clase encargada de representar en pantalla los datos obtenidos por el arduino
+*/
 class Monitor{
   //Atributos
   private int posX,posY,largo,ancho;
