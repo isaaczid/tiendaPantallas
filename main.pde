@@ -17,7 +17,7 @@ void draw(){
   pelota.animar();
   noFill();
   
-  monitor.dibujar(transparencia,12);
+  monitor.dibujar(transparencia,3);
 }
 
 void mousePressed(){

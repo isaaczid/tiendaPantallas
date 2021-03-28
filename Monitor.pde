@@ -1,18 +1,24 @@
 /***
 *Clase encargada de representar en pantalla los datos obtenidos por el arduino
 */
-class Monitor{
+
+abstract class MedidasPosiciones{
+  protected int posX,posY,largo,ancho;
+  protected int proporcion;
+}
+
+class Monitor extends MedidasPosiciones{
   //Atributos
-  private int posX,posY,largo,ancho;
-  private int proporcion;
+  //private int posX,posY,largo,ancho;
+  //private int proporcion;
   private color colorFondo;
   private Pantalla pantalla;
   private final color COLOR_INICIAL = color(255,140,52);
   private final int PROPORCION_INICIAL = 3;
   
-  private class Pantalla{
-    private int posX,posY,largo,ancho;
-    private int proporcion;
+  private class Pantalla extends MedidasPosiciones{
+    //private int posX,posY,largo,ancho;
+    //private int proporcion;
     private final int LARGO_MONITOR = width;
     private final int ANCHO_MONITOR = height;
     private final int BORDES = 7;
