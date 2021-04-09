@@ -15,6 +15,7 @@ class Monitor extends MedidasPosiciones{
   private Pantalla pantalla;
   private final color COLOR_INICIAL = color(255,140,52);
   private final int PROPORCION_INICIAL = 3;
+  private PFont fuente;
   
   private class Pantalla extends MedidasPosiciones{
     //private int posX,posY,largo,ancho;
@@ -60,9 +61,31 @@ class Monitor extends MedidasPosiciones{
     this.largo = largo;
     this.ancho = ancho;
     this.proporcion = this.PROPORCION_INICIAL;
+    this.fuente = createFont("Oswald-Medium.ttf", 150);
+    textFont(this.fuente);
     
     this.setColor(this.COLOR_INICIAL);
     this.pantalla = new Pantalla(this.proporcion);
+  }
+ 
+  public void setText(String info, boolean transparencia){
+    if(!transparencia){
+      float pesoValor = float(info);
+      String pesoTexto = "0";
+      
+      
+      if(pesoValor < 10.0){
+        pesoTexto += info;
+      }else{
+        pesoTexto = info;
+      }
+      
+      //textSize(150);
+      //textFont(this.fuente);
+      fill(0);
+      textAlign(CENTER, CENTER);
+      text(pesoTexto, (width/2), height/2 + 100);
+    }
   }
   
   public void dibujar(){
